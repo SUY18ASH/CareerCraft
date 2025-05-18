@@ -1,0 +1,208 @@
+/* -------------------------------------- */
+/* 1) Define LIGHT-theme variables on root */
+/* -------------------------------------- */
+:root {
+  --bg-primary: #f0f4f8;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --accent-primary: #008080;  /* teal */
+  --accent-secondary: #ff6b6b; /* salmon */
+  --card-bg: rgba(255,255,255,0.8);
+  --glass-bg: rgba(255,255,255,0.3);
+  --glass-border: rgba(255,255,255,0.6);
+}
+
+/* -------------------------------------- */
+/* 2) Override for DARK mode               */
+/* -------------------------------------- */
+body[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent-primary: #00e0ff;   /* neon cyan */
+  --accent-secondary: #ff6b6b; /* salmon */
+  --card-bg: rgba(255,255,255,0.05);
+  --glass-bg: rgba(255,255,255,0.08);
+  --glass-border: rgba(255,255,255,0.1);
+}
+
+/* -------------------------------------- */
+/* 3) Base styles using variables         */
+/* -------------------------------------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Button */
+.MuiButton-root {
+  text-transform: none !important;
+  font-weight: 600;
+  border-radius: 8px !important;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--card-bg) 100%);
+  color: var(--accent-primary);
+  text-align: center;
+  padding: 100px 20px;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+}
+.hero .MuiButton-root {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* FEATURES */
+.features {
+  background: var(--card-bg);
+  padding: 60px 20px;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.feature-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  transition: transform .2s ease;
+}
+.feature-card:hover { transform: translateY(-5px); }
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-primary);
+}
+.feature-card p { color: var(--text-secondary); }
+
+/* STEPS */
+.steps {
+  background: var(--accent-primary);
+  padding: 80px 20px;
+}
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 28px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.step {
+  background: var(--card-bg);
+  padding: 24px;
+  text-align: center;
+  border-radius: 16px;
+}
+.step-icon {
+  background: var(--accent-secondary);
+  color: var(--bg-primary);
+  font-size: 1.5rem;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  line-height: 48px;
+  margin: 0 auto 10px;
+}
+.step-title {
+  color: var(--accent-secondary);
+  font-weight: 600;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  background: var(--glass-bg);
+  padding: 60px 20px;
+  text-align: center;
+}
+.testimonials h4 {
+  margin-bottom: 2rem;
+  color: var(--accent-primary);
+}
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.testimonial {
+  background: var(--glass-bg);
+  border-radius: 12px;
+  padding: 24px;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* FOOTER */
+.footer {
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+}
+.footer a {
+  color: var(--accent-primary);
+  margin: 0 10px;
+}
+
+/* FORMS & INPUTS */
+.MuiTextField-root, .MuiFormControl-root {
+  margin-bottom: 1.5rem;
+}
+.MuiInputBase-root {
+  background: var(--card-bg);
+  border-radius: 8px;
+}
+
+/* CARDS */
+.MuiCard-root {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  backdrop-filter: blur(12px);
+  margin-bottom: 2rem;
+}
+
+/* TABLE / LISTS */
+ul, ol {
+  padding-left: 1.25rem;
+  color: var(--text-secondary);
+}
+.MuiList-root {
+  background: var(--glass-bg) !important;
+  border-radius: 8px !important;
+}
+
+/* BUTTON GROUPS */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
