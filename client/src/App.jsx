@@ -12,73 +12,75 @@ import AdminJobPost from "./pages/AdminJobPost";
 import Applications from "./pages/Applications";
 import BookmarkedJobs from "./pages/BookmarkedJobs";
 import Profile from "./pages/Profile";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
     <>
       <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
-          <Route
-            path="/upload"
-            element={
-              <ProtectedRoute>
-                <ResumeUpload />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/analysis"
-            element={
-              <ProtectedRoute>
-                <ResumeAnalysis />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/jobs"
-            element={
-              <ProtectedRoute>
-                <JobRecommendations />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/applications"
-            element={
-              <ProtectedRoute>
-                <Applications />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/jobs"
-            element={
-              <ProtectedRoute>
-                <AdminJobPost />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/bookmarks"
-            element={
-              <ProtectedRoute>
-                <BookmarkedJobs />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <ProtectedRoute>
-                <Profile />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
+        <Route
+          path="/upload"
+          element={
+            <ProtectedRoute>
+              <ResumeUpload />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/analysis"
+          element={
+            <ProtectedRoute>
+              <ResumeAnalysis />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/jobs"
+          element={
+            <ProtectedRoute>
+              <JobRecommendations />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/applications"
+          element={
+            <ProtectedRoute>
+              <Applications />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/jobs"
+          element={
+            <ProtectedRoute>
+              <AdminJobPost />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/bookmarks"
+          element={
+            <ProtectedRoute>
+              <BookmarkedJobs />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+        <Analytics />
+      </Routes>
     </>
   );
 }
